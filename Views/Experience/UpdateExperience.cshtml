@@ -1,8 +1,10 @@
 ﻿@model Experience
+
 @{
-    ViewData["Title"] = "CreateExperience";
+    ViewData["Title"] = "UpdateExperience";
     Layout = "~/Views/Layout/Index.cshtml";
 }
+
 
 <div class="content">
 	<div class="container-fluid">
@@ -15,8 +17,9 @@
 					</div>
 					<div class="card-body">
 						<form method="post">
+							<input type="hidden" asp-for="ExperienceId" />
 							<label>About Company</label>
-							<input type="text" asp-for="Head" class="form-control"/>
+							<input type="text" asp-for="Head" class="form-control" />
 							<br />
 							<label>Position Worked</label>
 							<input type="text" asp-for="Title" class="form-control" />

@@ -11,8 +11,13 @@
         @await Component.InvokeAsync("LayoutNavbarComponentPartial")
         @await Component.InvokeAsync("LayoutSidebarComponentPartial")
         
-        
+        <div class="main-panel">
         @RenderBody()
+            @await Component.InvokeAsync("LayoutFooterComponentPartial")
+        </div>
+       
+
+
     </div>
     </div>
     <!-- Modal -->
