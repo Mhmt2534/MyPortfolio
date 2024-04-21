@@ -1,0 +1,59 @@
+﻿@model List<MyPortfolio.DAL.Entities.Portfolio>
+
+
+
+<section id="works" class="s-works target-section">
+
+  
+
+    <div class="row narrow section-intro has-bottom-sep">
+        <div class="col-full">
+            <h3>Portfolio</h3>
+            <h1>See My Latest Projects.</h1>
+
+            <p class="lead">Below, I have listed the small projects I have completed.</p>
+        </div>
+    </div>
+
+    <div class="row masonry-wrap">
+        <div class="masonry">
+
+            @foreach (var item in Model)
+            {
+
+                <div class="masonry__brick deneme">
+                    <div class="item-folio">
+
+                        <div class="item-folio__thumb">
+                            <a href="@item.ImageUrl" class="thumb-link" title="The Beetle Car" data-size="@item.ImageWidth.ToString() x @item.ImageHeight.ToString()">
+                                <img src="@item.ImageUrl"
+                                     srcset="@item.ImageUrl 1x, ~/hola-master/images/potfolio/beetle@2x.jpg 2x" alt="">
+                                <span class="shadow-overlay"></span>
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                @item.Title
+                            </h3>
+                            <p class="item-folio__cat">
+                                @item.SubTitle
+                            </p>
+                        </div>
+
+                        <a href="@item.Url" class="item-folio__project-link" title="Project link">
+                            <i class="im im-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>@item.Description</p>
+                        </div>
+
+                    </div> <!-- end item-folio -->
+                </div> <!-- end masonry__brick -->
+            }
+
+        </div>
+    </div> <!-- end masonry -->
+
+</section> 
