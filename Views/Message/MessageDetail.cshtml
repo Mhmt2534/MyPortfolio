@@ -1,0 +1,54 @@
+﻿@model Message
+
+@{
+    ViewData["Title"] = "MessageDetail";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<style>
+    body {
+        background: #f5f5f5
+    }
+
+    .text-white-50 {
+        color: rgba(255, 255, 255, .5);
+    }
+
+    .bg-blue {
+        background-color: #00b5ec;
+    }
+
+    .border-bottom {
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .box-shadow {
+        box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    }
+
+    .denemee {
+        position: relative;
+        top: 50px;
+    }
+
+</style>
+
+<input type="hidden" asp-for="MessageId"/>
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="my-3 p-3 bg-white rounded box-shadow">
+            <h6 class="border-bottom border-gray pb-2 mb-0">Recent Messages</h6>
+                <div class="media text-muted pt-3">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" class="mr-2 rounded" width="128" height="128">
+                    <p class="media-body pb-3 mb-0 large lh-125 border-bottom border-gray">
+                        <strong class="d-block text-gray-dark">@Model.NameSurname</strong>
+                        @Model.MessageDetail
+                    </p>
+                </div>         
+        </div>
+    </div>
+</div>
+
+
